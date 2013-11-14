@@ -122,7 +122,6 @@
   <ItemGroup>
     <ClCompile Include="accrete.c" />
     <ClCompile Include="display.c" />
-    <ClCompile Include="Dumas.c" />
     <ClCompile Include="enviro.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="stargen.c" />
@@ -135,13 +134,10 @@
     <ClInclude Include="accrete.h" />
     <ClInclude Include="const.h" />
     <ClInclude Include="display.h" />
-    <ClInclude Include="Dumas.h" />
     <ClInclude Include="enviro.h" />
-    <ClInclude Include="mac_prefix.h" />
     <ClInclude Include="propert.h" />
     <ClInclude Include="stargen.h" />
     <ClInclude Include="structs.h" />
-    <ClInclude Include="types.h" />
     <ClInclude Include="utils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

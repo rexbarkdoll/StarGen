@@ -21,9 +21,6 @@
     <ClCompile Include="display.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Dumas.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="enviro.c">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -47,13 +44,7 @@
     <ClInclude Include="display.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Dumas.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="enviro.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="mac_prefix.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="propert.h">
@@ -63,9 +54,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="structs.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="types.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="utils.h">

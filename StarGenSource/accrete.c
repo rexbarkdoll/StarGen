@@ -14,7 +14,6 @@
 #include 	"stargen.h"
 #include 	"utils.h"
 
-#include	"Dumas.h"
 
 /* Now for some variables global to the accretion process:	    */
 int 			dust_left;

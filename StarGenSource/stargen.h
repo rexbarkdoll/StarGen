@@ -101,17 +101,12 @@ extern int max_gas;
 										// OS-specific constants for finding
 										// the default output directory and
 										// other dirs:
-#ifdef macintosh
-#define	SUBDIR	":html:"
-#define DIRSEP	":"
-#else
 #ifdef WIN32
 #define	SUBDIR	"html\\"
 #define DIRSEP	"\\"
 #else
 #define	SUBDIR	"html/"
 #define DIRSEP	"/"
-#endif
 #endif
 
 extern char *	stargen_revision;		// RCS revision of stargen.c
