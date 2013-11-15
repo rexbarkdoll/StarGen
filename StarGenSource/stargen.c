@@ -1895,11 +1895,6 @@ int stargen (actions		action,
 		
 		// Free the dust and planets created by accrete:
 		free_generations ();
-
-#if MEMORY_CHECK
-		dumasVerifyHoard();
-		dumasDumpHoard ();
-#endif
 	}
 	
 	if ((flag_verbose & 0x0001) || (flag_verbose & 0x0002))

@@ -1,13 +1,5 @@
 #include <math.h>
 
-#if 0
-#ifdef LONG_RAND
-#define RAND_MAX		(2147483647.0)
-#else
-#define RAND_MAX		(32767.0)
-#endif
-#endif
-
 #define PI						(3.1415926536)
 #define RADIANS_PER_ROTATION	(2.0 * PI)
 
