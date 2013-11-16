@@ -3,7 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StarGen", "StarGenSource\StarGen.vcxproj", "{A0FFE05C-34B3-4120-A70B-943743CFB060}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StarGenSource", "StarGenSource\StarGen.vcxproj", "{A0FFE05C-34B3-4120-A70B-943743CFB060}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StarGenLib", "StarGenLib\StarGenLib.vcxproj", "{265F137A-CB07-42AF-B217-CB520EB95328}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StarGenDemo", "StarGenDemo\StarGenDemo.vcxproj", "{96E88D50-3546-4866-8E2A-63871C46571A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{265F137A-CB07-42AF-B217-CB520EB95328} = {265F137A-CB07-42AF-B217-CB520EB95328}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +22,14 @@ Global
 		{A0FFE05C-34B3-4120-A70B-943743CFB060}.Debug|Win32.Build.0 = Debug|Win32
 		{A0FFE05C-34B3-4120-A70B-943743CFB060}.Release|Win32.ActiveCfg = Release|Win32
 		{A0FFE05C-34B3-4120-A70B-943743CFB060}.Release|Win32.Build.0 = Release|Win32
+		{265F137A-CB07-42AF-B217-CB520EB95328}.Debug|Win32.ActiveCfg = Debug|Win32
+		{265F137A-CB07-42AF-B217-CB520EB95328}.Debug|Win32.Build.0 = Debug|Win32
+		{265F137A-CB07-42AF-B217-CB520EB95328}.Release|Win32.ActiveCfg = Release|Win32
+		{265F137A-CB07-42AF-B217-CB520EB95328}.Release|Win32.Build.0 = Release|Win32
+		{96E88D50-3546-4866-8E2A-63871C46571A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{96E88D50-3546-4866-8E2A-63871C46571A}.Debug|Win32.Build.0 = Debug|Win32
+		{96E88D50-3546-4866-8E2A-63871C46571A}.Release|Win32.ActiveCfg = Release|Win32
+		{96E88D50-3546-4866-8E2A-63871C46571A}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
