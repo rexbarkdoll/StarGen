@@ -20,6 +20,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestUnitTest++", "UnitTest+
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestStarGenDemo", "TestStarGenDemo\TestStarGenDemo.vcxproj", "{F06B860B-E7B9-4E0A-9A0A-4625CB32A733}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StarGenDemoLib", "StarGenDemoLib\StarGenDemoLib.vcxproj", "{DB6398E3-38E5-4483-9E52-F925390AB34F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -50,6 +52,10 @@ Global
 		{F06B860B-E7B9-4E0A-9A0A-4625CB32A733}.Debug|Win32.Build.0 = Debug|Win32
 		{F06B860B-E7B9-4E0A-9A0A-4625CB32A733}.Release|Win32.ActiveCfg = Release|Win32
 		{F06B860B-E7B9-4E0A-9A0A-4625CB32A733}.Release|Win32.Build.0 = Release|Win32
+		{DB6398E3-38E5-4483-9E52-F925390AB34F}.Debug|Win32.ActiveCfg = Debug|Win32
+		{DB6398E3-38E5-4483-9E52-F925390AB34F}.Debug|Win32.Build.0 = Debug|Win32
+		{DB6398E3-38E5-4483-9E52-F925390AB34F}.Release|Win32.ActiveCfg = Release|Win32
+		{DB6398E3-38E5-4483-9E52-F925390AB34F}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
