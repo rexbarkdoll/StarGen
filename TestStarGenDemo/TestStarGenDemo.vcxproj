@@ -53,14 +53,14 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(SolutionDir)UnitTest++/src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)UnitTest++/src;$(SolutionDir)StarGenDemo</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <PostBuildEvent>
-      <Command>$(TargetPath)</Command>
+      <Command>"$(TargetPath)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -82,9 +82,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="TestCommandLine.cpp" />
     <ClCompile Include="TestStarGenDemo.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\StarGenDemo\StarGenDemo.vcxproj">
+      <Project>{96e88d50-3546-4866-8e2a-63871c46571a}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\UnitTest++\UnitTest++.vcxproj">
       <Project>{64a4fefe-0461-4e95-8cc1-91ef5f57dbc6}</Project>
     </ProjectReference>

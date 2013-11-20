@@ -78,12 +78,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CommandLine.cpp" />
     <ClCompile Include="StarGenDemo.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\StarGenLib\StarGenLib.vcxproj">
       <Project>{265f137a-cb07-42af-b217-cb520eb95328}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CommandLine.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
