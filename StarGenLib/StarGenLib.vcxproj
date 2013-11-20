@@ -10,6 +10,12 @@
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="StarGen.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="StarGen.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{265F137A-CB07-42AF-B217-CB520EB95328}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
