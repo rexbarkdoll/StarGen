@@ -11,6 +11,12 @@ public:
 
 	size_t count() const { return args.size(); }
 
+	bool get(const std::string& arg) const;
+
+	bool get(const std::string& arg, int& value) const;
+
+	bool get(const std::string& arg, double& value) const;
+
 private:
 	std::vector<std::string> args;
 };
