@@ -32,97 +32,97 @@ typedef struct gas {
 typedef struct sun {
 	long double	luminosity;
 	long double	mass;
-	long double life;
-	long double age;
-	long double r_ecosphere;
+	long double 	life;
+	long double 	age;
+	long double 	r_ecosphere;
 	char		*name;
 	} sun;
 
 typedef struct planets_record {
-	int			planet_no;
-	long double a;					/* semi-major axis of solar orbit (in AU)*/
-	long double e;					/* eccentricity of solar orbit		 */
+	int		planet_no;
+	long double 	a;					/* semi-major axis of solar orbit (in AU)*/
+	long double 	e;					/* eccentricity of solar orbit		 */
 	long double	axial_tilt;			/* units of degrees					 */
-	long double mass;				/* mass (in solar masses)			 */
+	long double 	mass;				/* mass (in solar masses)			 */
 	int 		gas_giant;			/* TRUE if the planet is a gas giant */
 	long double	dust_mass;			/* mass, ignoring gas				 */
 	long double	gas_mass;			/* mass, ignoring dust				 */
 									/*   ZEROES start here               */
-	long double moon_a;				/* semi-major axis of lunar orbit (in AU)*/
-	long double moon_e;				/* eccentricity of lunar orbit		 */
+	long double 	moon_a;				/* semi-major axis of lunar orbit (in AU)*/
+	long double 	moon_e;				/* eccentricity of lunar orbit		 */
 	long double	core_radius;		/* radius of the rocky core (in km)	 */
-	long double radius;				/* equatorial radius (in km)		 */
+	long double 	radius;				/* equatorial radius (in km)		 */
 	int 		orbit_zone;			/* the 'zone' of the planet			 */
-	long double density;			/* density (in g/cc)				 */
-	long double orb_period;			/* length of the local year (days)	 */
-	long double day;				/* length of the local day (hours)	 */
+	long double 	density;			/* density (in g/cc)				 */
+	long double 	orb_period;			/* length of the local year (days)	 */
+	long double 	day;				/* length of the local day (hours)	 */
 	int 		resonant_period;	/* TRUE if in resonant rotation		 */
 	long double	esc_velocity;		/* units of cm/sec					 */
 	long double	surf_accel;			/* units of cm/sec2					 */
 	long double	surf_grav;			/* units of Earth gravities			 */
 	long double	rms_velocity;		/* units of cm/sec					 */
-	long double molec_weight;		/* smallest molecular weight retained*/
+	long double 	molec_weight;		/* smallest molecular weight retained*/
 	long double	volatile_gas_inventory;
 	long double	surf_pressure;		/* units of millibars (mb)			 */
-	int		 	greenhouse_effect;	/* runaway greenhouse effect?		 */
+	int		greenhouse_effect;	/* runaway greenhouse effect?		 */
 	long double	boil_point;			/* the boiling point of water (Kelvin)*/
 	long double	albedo;				/* albedo of the planet				 */
 	long double	exospheric_temp;	/* units of degrees Kelvin			 */
-	long double estimated_temp;     /* quick non-iterative estimate (K)  */
-	long double estimated_terr_temp;/* for terrestrial moons and the like*/
+	long double 	estimated_temp;     /* quick non-iterative estimate (K)  */
+	long double 	estimated_terr_temp;/* for terrestrial moons and the like*/
 	long double	surf_temp;			/* surface temperature in Kelvin	 */
 	long double	greenhs_rise;		/* Temperature rise due to greenhouse */
-	long double high_temp;			/* Day-time temperature              */
-	long double low_temp;			/* Night-time temperature			 */
-	long double max_temp;			/* Summer/Day						 */
-	long double min_temp;			/* Winter/Night						 */
+	long double 	high_temp;			/* Day-time temperature              */
+	long double 	low_temp;			/* Night-time temperature			 */
+	long double 	max_temp;			/* Summer/Day						 */
+	long double 	min_temp;			/* Winter/Night						 */
 	long double	hydrosphere;		/* fraction of surface covered		 */
 	long double	cloud_cover;		/* fraction of surface covered		 */
 	long double	ice_cover;			/* fraction of surface covered		 */
 	sun*		sun;
-	int			gases;				/* Count of gases in the atmosphere: */
+	int		gases;				/* Count of gases in the atmosphere: */
 	gas*		atmosphere;
-	planet_type type;				/* Type code						 */
-	int			minor_moons;
-	planet_pointer first_moon;
+	planet_type 	type;				/* Type code						 */
+	int		minor_moons;
+	planet_pointer 	first_moon;
 									/*   ZEROES end here               */
-	planet_pointer next_planet;
+	planet_pointer 	next_planet;
 	} planets;
 
 /*	Define the solar system for comparisons, etc. */
 #define ZEROES 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,NULL,0,NULL,tUnknown
 
 typedef struct dust_record {
-	long double inner_edge;
-	long double outer_edge;
+	long double 	inner_edge;
+	long double 	outer_edge;
 	int 		dust_present;
 	int 		gas_present;
-	dust_pointer next_band;
+	dust_pointer 	next_band;
 	 } dust;
 
 typedef struct star {
-	long double		luminosity;
-	long double		mass;
-	long double		m2;
-	long double		e;
-	long double		a;
+	long double	luminosity;
+	long double	mass;
+	long double	m2;
+	long double	e;
+	long double	a;
 	planet_pointer	known_planets;
-	char			*desig;
-	int				in_celestia;
-	char			*name;
+	char		*desig;
+	int		in_celestia;
+	char		*name;
 	} star;
 
 typedef struct catalog {
-	int				count;
-	char*			arg;
-	star			(*stars)[];
+	int		count;
+	char*		arg;
+	star		(*stars)[];
 	} catalog;
 
 typedef	struct gen
 {
 	dust_pointer	dusts;
 	planet_pointer	planets;
-	gen_pointer		next;
+	gen_pointer	next;
 } generation;
 
 // From Keris
@@ -131,7 +131,7 @@ typedef struct ChemTableS
 {
   int         	num;
   char       	*symbol;
-  char			*html_symbol;
+  char		*html_symbol;
   char       	*name;
   long double	weight;
   long double	melt;
@@ -159,9 +159,9 @@ typedef struct ChemTableS
 
 #define ECCENTRICITY_COEFF		(0.077)			/* Dole's was 0.077			*/
 #define PROTOPLANET_MASS		(1.0E-15)		/* Units of solar masses	*/
-#define CHANGE_IN_EARTH_ANG_VEL (-1.3E-15)		/* Units of radians/sec/year*/
+#define CHANGE_IN_EARTH_ANG_VEL 	(-1.3E-15)		/* Units of radians/sec/year*/
 #define SOLAR_MASS_IN_GRAMS		(1.989E33)		/* Units of grams			*/
-#define SOLAR_MASS_IN_KILOGRAMS	(1.989E30)		/* Units of kg				*/
+#define SOLAR_MASS_IN_KILOGRAMS		(1.989E30)		/* Units of kg				*/
 #define EARTH_MASS_IN_GRAMS		(5.977E27)		/* Units of grams			*/
 #define EARTH_RADIUS			(6.378E8)		/* Units of cm				*/
 #define EARTH_DENSITY			(5.52)			/* Units of g/cc			*/
@@ -169,35 +169,35 @@ typedef struct ChemTableS
 //      EARTH_ACCELERATION		(981.0)			/* Units of cm/sec2			*/
 #define EARTH_ACCELERATION		(980.7)			/* Units of cm/sec2			*/
 #define EARTH_AXIAL_TILT		(23.4)			/* Units of degrees			*/
-#define EARTH_EXOSPHERE_TEMP	(1273.0)		/* Units of degrees Kelvin	*/
-#define SUN_MASS_IN_EARTH_MASSES (332775.64)
+#define EARTH_EXOSPHERE_TEMP		(1273.0)		/* Units of degrees Kelvin	*/
+#define SUN_MASS_IN_EARTH_MASSES 	(332775.64)
 #define ASTEROID_MASS_LIMIT		(0.001)			/* Units of Earth Masses	*/
-#define EARTH_EFFECTIVE_TEMP	(250.0)			/* Units of degrees Kelvin (was 255)	*/
-#define CLOUD_COVERAGE_FACTOR	(1.839E-8)		/* Km2/kg					*/
-#define EARTH_WATER_MASS_PER_AREA	 (3.83E15)	/* grams per square km		*/
-#define EARTH_SURF_PRES_IN_MILLIBARS (1013.25)
-#define EARTH_SURF_PRES_IN_MMHG	(760.)			/* Dole p. 15				*/
-#define EARTH_SURF_PRES_IN_PSI	(14.696)		/* Pounds per square inch	*/
+#define EARTH_EFFECTIVE_TEMP		(250.0)			/* Units of degrees Kelvin (was 255)	*/
+#define CLOUD_COVERAGE_FACTOR		(1.839E-8)		/* Km2/kg					*/
+#define EARTH_WATER_MASS_PER_AREA	(3.83E15)	/* grams per square km		*/
+#define EARTH_SURF_PRES_IN_MILLIBARS 	(1013.25)
+#define EARTH_SURF_PRES_IN_MMHG		(760.)			/* Dole p. 15				*/
+#define EARTH_SURF_PRES_IN_PSI		(14.696)		/* Pounds per square inch	*/
 #define MMHG_TO_MILLIBARS (EARTH_SURF_PRES_IN_MILLIBARS / EARTH_SURF_PRES_IN_MMHG)
 #define PSI_TO_MILLIBARS (EARTH_SURF_PRES_IN_MILLIBARS / EARTH_SURF_PRES_IN_PSI)
-#define H20_ASSUMED_PRESSURE	(47. * MMHG_TO_MILLIBARS) /* Dole p. 15      */
-#define MIN_O2_IPP	(72. * MMHG_TO_MILLIBARS)	/* Dole, p. 15				*/
-#define MAX_O2_IPP	(400. * MMHG_TO_MILLIBARS)	/* Dole, p. 15				*/
-#define MAX_HE_IPP	(61000. * MMHG_TO_MILLIBARS)	/* Dole, p. 16			*/
-#define MAX_NE_IPP	(3900. * MMHG_TO_MILLIBARS)	/* Dole, p. 16				*/
-#define MAX_N2_IPP	(2330. * MMHG_TO_MILLIBARS)	/* Dole, p. 16				*/
-#define MAX_AR_IPP	(1220. * MMHG_TO_MILLIBARS)	/* Dole, p. 16				*/
-#define MAX_KR_IPP	(350. * MMHG_TO_MILLIBARS)	/* Dole, p. 16				*/
-#define MAX_XE_IPP	(160. * MMHG_TO_MILLIBARS)	/* Dole, p. 16				*/
-#define MAX_CO2_IPP (7. * MMHG_TO_MILLIBARS)	/* Dole, p. 16				*/
+#define H20_ASSUMED_PRESSURE	(47. * MMHG_TO_MILLIBARS) 	/* Dole p. 15      */
+#define MIN_O2_IPP		(72. * MMHG_TO_MILLIBARS)	/* Dole, p. 15				*/
+#define MAX_O2_IPP		(400. * MMHG_TO_MILLIBARS)	/* Dole, p. 15				*/
+#define MAX_HE_IPP		(61000. * MMHG_TO_MILLIBARS)	/* Dole, p. 16			*/
+#define MAX_NE_IPP		(3900. * MMHG_TO_MILLIBARS)	/* Dole, p. 16				*/
+#define MAX_N2_IPP		(2330. * MMHG_TO_MILLIBARS)	/* Dole, p. 16				*/
+#define MAX_AR_IPP		(1220. * MMHG_TO_MILLIBARS)	/* Dole, p. 16				*/
+#define MAX_KR_IPP		(350. * MMHG_TO_MILLIBARS)	/* Dole, p. 16				*/
+#define MAX_XE_IPP		(160. * MMHG_TO_MILLIBARS)	/* Dole, p. 16				*/
+#define MAX_CO2_IPP 		(7. * MMHG_TO_MILLIBARS)	/* Dole, p. 16				*/
 #define MAX_HABITABLE_PRESSURE (118 * PSI_TO_MILLIBARS)	/* Dole, p. 16		*/
 // The next gases are listed as poisonous in parts per million by volume at 1 atm:
-#define PPM_PRSSURE (EARTH_SURF_PRES_IN_MILLIBARS / 1000000.)
+#define PPM_PRSSURE 	(EARTH_SURF_PRES_IN_MILLIBARS / 1000000.)
 #define MAX_F_IPP	(0.1 * PPM_PRSSURE)			/* Dole, p. 18				*/
 #define MAX_CL_IPP	(1.0 * PPM_PRSSURE)			/* Dole, p. 18				*/
-#define MAX_NH3_IPP	(100. * PPM_PRSSURE)		/* Dole, p. 18				*/
+#define MAX_NH3_IPP	(100. * PPM_PRSSURE)			/* Dole, p. 18				*/
 #define MAX_O3_IPP	(0.1 * PPM_PRSSURE)			/* Dole, p. 18				*/
-#define MAX_CH4_IPP	(50000. * PPM_PRSSURE)		/* Dole, p. 18				*/
+#define MAX_CH4_IPP	(50000. * PPM_PRSSURE)			/* Dole, p. 18				*/
 
 
 
@@ -207,36 +207,36 @@ typedef struct ChemTableS
 //      EARTH_AVERAGE_CELSIUS   (15.5)			/* Average Earth Temperature */
 #define EARTH_AVERAGE_CELSIUS   (14.0)			/* Average Earth Temperature */
 #define EARTH_AVERAGE_KELVIN    (EARTH_AVERAGE_CELSIUS + FREEZING_POINT_OF_WATER)
-#define DAYS_IN_A_YEAR			(365.256)		/* Earth days per Earth year*/
+#define DAYS_IN_A_YEAR		(365.256)		/* Earth days per Earth year*/
 //		gas_retention_threshold = 5.0;  		/* ratio of esc vel to RMS vel */
 #define GAS_RETENTION_THRESHOLD (6.0)			/* ratio of esc vel to RMS vel */
 
-#define ICE_ALBEDO				(0.7)
+#define ICE_ALBEDO			(0.7)
 #define CLOUD_ALBEDO			(0.52)
 #define GAS_GIANT_ALBEDO		(0.5)			/* albedo of a gas giant	*/
 #define AIRLESS_ICE_ALBEDO		(0.5)
 #define EARTH_ALBEDO			(0.3)			/* was .33 for a while */
-#define GREENHOUSE_TRIGGER_ALBEDO (0.20)
+#define GREENHOUSE_TRIGGER_ALBEDO 	(0.20)
 #define ROCKY_ALBEDO			(0.15)
-#define ROCKY_AIRLESS_ALBEDO	(0.07)
+#define ROCKY_AIRLESS_ALBEDO		(0.07)
 #define WATER_ALBEDO			(0.04)
 
 #define SECONDS_PER_HOUR		(3600.0)
-#define CM_PER_AU				(1.495978707E13)/* number of cm in an AU	*/
-#define CM_PER_KM				(1.0E5)			/* number of cm in a km		*/
-#define KM_PER_AU				(CM_PER_AU / CM_PER_KM)
+#define CM_PER_AU			(1.495978707E13)/* number of cm in an AU	*/
+#define CM_PER_KM			(1.0E5)			/* number of cm in a km		*/
+#define KM_PER_AU			(CM_PER_AU / CM_PER_KM)
 #define CM_PER_METER			(100.0)
 //#define MILLIBARS_PER_BAR		(1013.25)
 #define MILLIBARS_PER_BAR		(1000.00)
 
 #define GRAV_CONSTANT			(6.672E-8)		/* units of dyne cm2/gram2	*/
 #define MOLAR_GAS_CONST			(8314.41)		/* units: g*m2/(sec2*K*mol) */
-#define K						(50.0)			/* K = gas/dust ratio		*/
-#define B						(1.2E-5)		/* Used in Crit_mass calc	*/
+#define K				(50.0)			/* K = gas/dust ratio		*/
+#define B				(1.2E-5)		/* Used in Crit_mass calc	*/
 #define DUST_DENSITY_COEFF		(2.0E-3)		/* A in Dole's paper		*/
-#define ALPHA					(5.0)			/* Used in density calcs	*/
-#define N						(3.0)			/* Used in density calcs	*/
-#define J						(1.46E-19)		/* Used in day-length calcs (cm2/sec2 g) */
+#define ALPHA				(5.0)			/* Used in density calcs	*/
+#define N				(3.0)			/* Used in density calcs	*/
+#define J				(1.46E-19)		/* Used in day-length calcs (cm2/sec2 g) */
 #ifdef HUGE_VAL
 #define INCREDIBLY_LARGE_NUMBER HUGE_VAL
 #else
@@ -248,27 +248,27 @@ typedef struct ChemTableS
 
 #define ATOMIC_HYDROGEN			(1.0)	/* H   */
 #define MOL_HYDROGEN			(2.0)	/* H2  */
-#define HELIUM					(4.0)	/* He  */
+#define HELIUM				(4.0)	/* He  */
 #define ATOMIC_NITROGEN			(14.0)	/* N   */
 #define ATOMIC_OXYGEN			(16.0)	/* O   */
-#define METHANE					(16.0)	/* CH4 */
-#define AMMONIA					(17.0)	/* NH3 */
-#define WATER_VAPOR				(18.0)	/* H2O */
-#define NEON					(20.2)	/* Ne  */
+#define METHANE				(16.0)	/* CH4 */
+#define AMMONIA				(17.0)	/* NH3 */
+#define WATER_VAPOR			(18.0)	/* H2O */
+#define NEON				(20.2)	/* Ne  */
 #define MOL_NITROGEN			(28.0)	/* N2  */
 #define CARBON_MONOXIDE			(28.0)	/* CO  */
 #define NITRIC_OXIDE			(30.0)	/* NO  */
-#define MOL_OXYGEN				(32.0)	/* O2  */
+#define MOL_OXYGEN			(32.0)	/* O2  */
 #define HYDROGEN_SULPHIDE		(34.1)	/* H2S */
-#define ARGON					(39.9)	/* Ar  */
+#define ARGON				(39.9)	/* Ar  */
 #define CARBON_DIOXIDE			(44.0)	/* CO2 */
 #define NITROUS_OXIDE			(44.0)	/* N2O */
 #define NITROGEN_DIOXIDE		(46.0)	/* NO2 */
-#define OZONE					(48.0)	/* O3  */
+#define OZONE				(48.0)	/* O3  */
 #define SULPH_DIOXIDE			(64.1)	/* SO2 */
 #define SULPH_TRIOXIDE			(80.1)	/* SO3 */
-#define KRYPTON					(83.8)	/* Kr  */
-#define XENON					(131.3) /* Xe  */
+#define KRYPTON				(83.8)	/* Kr  */
+#define XENON				(131.3) /* Xe  */
 
 //	And atomic numbers, for use in ChemTable indexes
 #define AN_H	1
@@ -406,7 +406,7 @@ unsigned int breathability (planet_pointer);
 
 #define	NONE			0
 #define	BREATHABLE		1
-#define	UNBREATHABLE	2
+#define	UNBREATHABLE		2
 #define	POISONOUS		3
 
 extern char* breathability_phrase[4];
@@ -423,26 +423,26 @@ extern void set_temp_range(planet_pointer planet);
  */
 
 typedef	enum actions {						// Callable StarGen can:
-	aGenerate,								//	- Generate randon system(s)
-	aListGases,								//	- List the gas table
-	aListCatalog,							//	- List the stars in a catalog
-	aListCatalogAsHTML,						//  - For creating a <FORM>
-	aSizeCheck,								//  - List sizes of various types
-	aListVerbosity,							//  - List values of the -v option
+	aGenerate,						//	- Generate randon system(s)
+	aListGases,						//	- List the gas table
+	aListCatalog,						//	- List the stars in a catalog
+	aListCatalogAsHTML,					//  - For creating a <FORM>
+	aSizeCheck,						//  - List sizes of various types
+	aListVerbosity,						//  - List values of the -v option
 } actions;
 
 int stargen (actions		action,			// One of the above
 			 char			flag_char,
-			 char *			path,			// OS path to where to write files
+			 char *			path,		// OS path to where to write files
 			 char *			url_path_arg,	// HTML path to parent of both the
-			 								//  directory named in 'path' and
-			 								//  the ref directory with images
+			 					//  directory named in 'path' and
+			 					//  the ref directory with images
 			 char *			filename_arg,	// Output file name (optional)
 			 char *			sys_name_arg,	// Human readble System name (opt.)
 			 
-			 FILE *			sgOut,			// Main stream to write to 
-			 								//	Thumbnails will be written there
-			 								//  for HTML format
+			 FILE *			sgOut,		// Main stream to write to 
+			 					//	Thumbnails will be written there
+			 					//  for HTML format
 			 FILE *			sgErr,			// Stream to write errors to (opt.)
 			 char *			prognam,		// Name of program (opt.)
 			 long double	mass_arg,		// Mass of star (not used with catalog)
@@ -463,14 +463,14 @@ int stargen (actions		action,			// One of the above
 #define	fUseSolarsystem			0x0001
 #define	fReuseSolarsystem		0x0002
 #define	fUseKnownPlanets		0x0004
-#define fNoGenerate				0x0008
+#define fNoGenerate			0x0008
 
-#define	fDoGases				0x0010
-#define	fDoMoons				0x0020
+#define	fDoGases			0x0010
+#define	fDoMoons			0x0020
 
 #define fOnlyHabitable			0x0100
 #define fOnlyMultiHabitable		0x0200
-#define fOnlyJovianHabitable	0x0400
+#define fOnlyJovianHabitable		0x0400
 #define fOnlyEarthlike			0x0800
 
 										// Values of out_format
@@ -494,11 +494,11 @@ extern catalog  jimb;
 extern planets mercury;					// For building private catalogs
 
 
-extern int          flag_verbose;		// Likely to move into stargen() args.
+extern int          	flag_verbose;		// Likely to move into stargen() args.
 
 										// Various statistics that are kept:
-extern int 		    total_earthlike;
-extern int 		    total_habitable;
+extern int 		total_earthlike;
+extern int 		total_habitable;
 
 extern long double	min_breathable_terrestrial_g;
 extern long double	min_breathable_g;
@@ -540,13 +540,12 @@ extern char *	stargen_revision;		// RCS revision of stargen.c
 #define	MAX_EXP_DIGS	3
 #define	MAX_MAN_DIGS	20
 
-char *engineer_notation(long double d, 
-						int 		p)
+char *engineer_notation(long double d, int p)
 {
-	static char mansign;
-	static char expsign;
-	static char output[1+MAX_MAN_DIGS+1+1+MAX_EXP_DIGS+1];
-	long double mantissa;
+	static char 	mansign;
+	static char 	expsign;
+	static char 	output[1+MAX_MAN_DIGS+1+1+MAX_EXP_DIGS+1];
+	long double 	mantissa;
 	int 		exponent;
 
 	mansign = '+';
@@ -604,10 +603,10 @@ void text_describe_system(planet_pointer innermost_planet, int do_gases, long in
 	int 			counter; 
 	
 	printf("Stargen - V%s; seed=%ld\n", stargen_revision, seed);
-	printf("                          SYSTEM  CHARACTERISTICS\n");
+	printf("SYSTEM  CHARACTERISTICS\n");
 	printf("Stellar mass: %4.2Lf solar masses\n", sun->mass);
 	printf("Stellar luminosity: %4.2Lf\n",sun->luminosity);
-	printf("Age: %5.3Lf billion years	(%5.3Lf billion left on main sequence)\n",
+	printf("Age: %5.3Lf billion years (%5.3Lf billion left on main sequence)\n",
 		   (sun->age /1.0E9),(sun->life - sun->age) / 1.0E9);
 	printf("Habitable ecosphere radius: %3.3Lf AU\n",sun->r_ecosphere);
 	printf("\n");
@@ -684,7 +683,7 @@ void csv_describe_system(FILE *file, planet_pointer innermost_planet, int do_gas
 	sun*			sun = innermost_planet->sun;
 	int 			counter; 
 	char 			buffer[2000];
-	planet_pointer 	moon;
+	planet_pointer 		moon;
 	int 			moons; 
 
 	fprintf (file,
@@ -784,8 +783,7 @@ void csv_describe_system(FILE *file, planet_pointer innermost_planet, int do_gas
 						index = n;
 				}
 				
-				if (inspired_partial_pressure (planet->surf_pressure,
-											   planet->atmosphere[i].surf_pressure)
+				if (inspired_partial_pressure (planet->surf_pressure,planet->atmosphere[i].surf_pressure)
 					> gases[index].max_ipp)
 					poisonous = TRUE;
 				
@@ -794,13 +792,12 @@ void csv_describe_system(FILE *file, planet_pointer innermost_planet, int do_gas
 				 || poisonous)
 				{
 					sprintf (ptr, "%s %.1Lf%% %.0Lfmb (ipp:%.0Lf)%s; ",
-									gases[index].symbol,
-									100. * (planet->atmosphere[i].surf_pressure /
-											planet->surf_pressure),
-									planet->atmosphere[i].surf_pressure,
-									inspired_partial_pressure (planet->surf_pressure,
-															   planet->atmosphere[i].surf_pressure),
-									poisonous ? " poisonous" : ""
+						gases[index].symbol,
+						100. * (planet->atmosphere[i].surf_pressure / planet->surf_pressure),
+							planet->atmosphere[i].surf_pressure,
+							inspired_partial_pressure (planet->surf_pressure,
+								   planet->atmosphere[i].surf_pressure),
+								poisonous ? " poisonous" : ""
 							);
 					ptr = buffer + strlen(buffer);
 				}
@@ -884,7 +881,7 @@ void csv_describe_system(FILE *file, planet_pointer innermost_planet, int do_gas
 					}
 					
 					if (inspired_partial_pressure (moon->surf_pressure,
-												   moon->atmosphere[i].surf_pressure)
+						moon->atmosphere[i].surf_pressure)
 						> gases[index].max_ipp)
 						poisonous = TRUE;
 					
@@ -893,13 +890,12 @@ void csv_describe_system(FILE *file, planet_pointer innermost_planet, int do_gas
 					 || poisonous)
 					{
 						sprintf (ptr, "%s %.1Lf%% %.0Lfmb (ipp:%.0Lf)%s; ",
-										gases[index].symbol,
-										100. * (moon->atmosphere[i].surf_pressure /
-												moon->surf_pressure),
-										moon->atmosphere[i].surf_pressure,
-										inspired_partial_pressure (moon->surf_pressure,
+							gases[index].symbol,
+							100. * (moon->atmosphere[i].surf_pressure / moon->surf_pressure),
+								moon->atmosphere[i].surf_pressure,
+								inspired_partial_pressure (moon->surf_pressure,
 																   moon->atmosphere[i].surf_pressure),
-										poisonous ? " poisonous" : ""
+									poisonous ? " poisonous" : ""
 								);
 						ptr = buffer + strlen(buffer);
 					}
@@ -990,15 +986,15 @@ char *type_string (planet_type type)
 	switch (type)
 	{
 		case tUnknown:			typeString = "Unknown";		break;
-		case tRock:				typeString = "Rock";		break;
+		case tRock:			typeString = "Rock";		break;
 		case tVenusian:			typeString = "Venusian";	break;
 		case tTerrestrial:		typeString = "Terrestrial";	break;
-		case tSubSubGasGiant:	typeString = "GasDwarf";	break;
+		case tSubSubGasGiant:		typeString = "GasDwarf";	break;
 		case tSubGasGiant:		typeString = "Sub-Jovian";	break;
 		case tGasGiant:			typeString = "Jovian";		break;
 		case tMartian:			typeString = "Martian";		break;
 		case tWater:			typeString = "Water";		break;
-		case tIce:				typeString = "Ice";			break;
+		case tIce:			typeString = "Ice";			break;
 		case tAsteroids: 		typeString = "Asteroids";	break;
 		case t1Face:			typeString = "1Face";		break;
 	}
@@ -1011,24 +1007,24 @@ char *texture_name (planet_type type)
 	
 	switch (type)
 	{
-		case tUnknown:			typeString = "x.jpg";			break;
-		case tRock:				typeString = "callisto.jpg";	break;
-		case tVenusian:			typeString = "venuslike.jpg";	break;
-		case tTerrestrial:		typeString = "Earthlike.png";	break;
-		case tSubSubGasGiant:	typeString = "x.jpg";			break;
-		case tSubGasGiant:		typeString = "gasgiant.jpg";	break;
-		case tGasGiant:			typeString = "jupiterlike.jpg";	break;
-		case tMartian:			typeString = "mars.jpg";		break;
-		case tWater:			typeString = "x.jpg";			break;
-		case tIce:				typeString = "pluto.jpg";		break;
-		case tAsteroids: 		typeString = "asteroid.jpg";	break;
-		case t1Face:			typeString = "x.jpg";			break;
+		case tUnknown:			typeString = "unknown.svg";	break;
+		case tRock:			typeString = "Rocks.svg";	break;
+		case tVenusian:			typeString = "Venusian.svg";	break;
+		case tTerrestrial:		typeString = "terrestrial.svg";	break;
+		case tSubSubGasGiant:		typeString = "gasdwarf.svg";	break;
+		case tSubGasGiant:		typeString = "sub-jovian.svg";	break;
+		case tGasGiant:			typeString = "jovian.svg";	break;
+		case tMartian:			typeString = "martian.svg";	break;
+		case tWater:			typeString = "water.svg";	break;
+		case tIce:			typeString = "ice.svg";	 	break;
+		case tAsteroids: 		typeString = "asteroids.svg";	break;
+		case t1Face:			typeString = "1face.svg";	break;
 	}
 	return typeString;
 }
 
-void create_svg_file (FILE				*file_arg,
-					  planet_pointer	innermost_planet, 
+void create_svg_file (FILE						*file_arg,
+					  planet_pointer		innermost_planet, 
 					  char				*path, 
 					  char 				*file_name, 
 					  char 				*svg_ext, 
@@ -1062,7 +1058,7 @@ void create_svg_file (FILE				*file_arg,
 			double long		max_y		= 120.;
 			double long		margin		= 20.;
 			double long		inner_edge 	= innermost_planet->a * (1.0 - innermost_planet->e);
-			double long		outer_edge  = outermost_planet->a * (1.0 + outermost_planet->e);
+			double long		outer_edge  	= outermost_planet->a * (1.0 + outermost_planet->e);
 			double long		floor		= (int)(log10(inner_edge) - 1.);
 			double long		min_log 	= floor;
 			double long		ceiling		= (int)(log10(outer_edge) + 1.);
